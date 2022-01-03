@@ -1,0 +1,48 @@
+.sidenote:hover .sidenote-label {
+ background-color:var(--background);
+ color:var(--color);
+}
+.sidenote:hover .sidenote-content {
+ border:.2rem dashed;
+ padding:.875rem;
+ border-color:var(--accent);
+}
+.sidenote-label {
+ border-bottom:.2rem dashed var(--accent);
+}
+.sidenote-checkbox {
+ display:none
+}
+.sidenote-content {
+ display:block;
+ position:absolute;
+ width:15rem;
+ box-sizing:border-box;
+ border:.075rem solid var(--border-color);
+ border-radius:.2rem;
+ margin-top:-1.5rem;
+ padding:1rem;
+ text-align:left;
+ right:0;
+ margin-right:-16.5rem;
+}
+@media screen and (max-width:82rem) {
+ .sidenote-content {
+  display:none
+ }
+}
+.sidenote-delimiter {
+ display:none
+}
+@media screen and (max-width:82rem) {
+ .sidenote-content {
+  position:static;
+  margin-top:1rem;
+  margin-bottom:1rem;
+  width:100%;
+  margin-right:0
+ }
+ .sidenote-checkbox:checked~.sidenote-content {
+  display:block
+ }
+}

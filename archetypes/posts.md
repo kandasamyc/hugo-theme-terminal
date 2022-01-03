@@ -1,12 +1,13 @@
 +++
 title = "{{ replace .TranslationBaseName "-" " " | title }}"
-date = "{{ .Date }}"
-author = ""
+date = "{{.Date }}"
+author = "ksam"
 authorTwitter = "" #do not include @
 cover = ""
-tags = ["", ""]
-keywords = ["", ""]
+tags = []
+keywords = []
 description = ""
 showFullContent = false
-readingTime = false
+readingTime = true
+draft = true
 +++

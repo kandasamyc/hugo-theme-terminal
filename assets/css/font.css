@@ -1,17 +1,29 @@
 @font-face {
   font-display: swap;
-  font-family: 'Fira Code';
+  font-family: 'Iosevka SS14';
   font-style:  normal;
   font-weight: 400;
-  src: url("../fonts/FiraCode-Regular.woff") format("woff");
+  font-stretch: expanded;
+  src: url("../fonts/iosevka-ss14-extended.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'Fira Code';
+  font-family: 'Iosevka SS14';
   font-style:  normal;
   font-weight: 800;
-  src: url("../fonts/FiraCode-Bold.woff") format("woff");
+  font-stretch: expanded;
+  src: url("../fonts/iosevka-ss14-extendedbold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Iosevka SS14';
+  font-style:  italic;
+  font-weight: 400;
+  font-stretch: expanded;
+  src: url("../fonts/iosevka-ss14-extendeditalic.woff2") format("woff2");
   font-display: swap;
 }

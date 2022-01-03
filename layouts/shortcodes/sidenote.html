@@ -1,0 +1,7 @@
+<span class="sidenote">
+<label class="sidenote-label" for="{{ .Get "id" }}">{{ .Get "text"}}</label>
+<input class="sidenote-checkbox" type="checkbox" id="{{ .Get "id" }}"></input>
+<span class="sidenote-content">
+{{ .Inner }}
+</span>
+</span>
