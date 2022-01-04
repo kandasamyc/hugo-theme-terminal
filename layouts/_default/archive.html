@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="section is-fullheight">
+  {{ $type := "posts" }}
+  {{ $.Scratch.Set "count" 1 }}
+
+    {{ range (.Site.RegularPages.GroupByDate "2006") }}
+      {{ if and (gt .Key 1) (gt (where .Pages "Type" $type) 0) }}
+
+        {{ range (where .Pages "Type" $type) }}
+          {{ if (eq ($.Scratch.Get "count") 1) }}
+            {{ $.Scratch.Set "count" 0 }}
+            <h1>{{ .Date.Format "2006" }}</h1>
+          {{ end }}
+        {{ end }}
+
+        {{ $.Scratch.Set "count" 1 }}
+
+          <ul class="archive-list">
+          {{ range (where .Pages "Type" $type) }}
+            {{ if (ne .Params.hidden true) }}
+              <li>
+                <span class="archive-date">{{ .Date.Format "Jan 02" }}</span><a href="{{ .RelPermalink }}">{{ printf "#%03d:" (int .File.BaseFileName) }} {{ .Title }}</a>
+              </li>
+            {{ end }}
+          {{ end }}
+          </ul>
+          <hr/>
+
+    {{ end }}
+  {{ end }}
+</section>
+{{ end }}

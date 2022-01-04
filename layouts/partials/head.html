@@ -20,6 +20,11 @@
   <link rel="stylesheet" href="{{ "style.css" | absURL }}">
 {{- end }}
 
+  <!-- MathJAX -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
 <!-- Icons -->
 <link rel="apple-touch-icon" href="{{ "img/apple-touch-icon-192x192.png" | absURL }}">
 {{ if isset $.Site.Params "favicon" }}
