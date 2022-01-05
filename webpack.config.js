@@ -1,6 +1,7 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const postcssCustomMedia = require('postcss-custom-media');
 
 const path = require("path");
 
@@ -66,7 +67,16 @@ module.exports = (env, { mode }) => ({
               importLoaders: 1,
             },
           },
-          "postcss-loader",
+          { 
+	    loader: 'postcss-loader',
+            options: {
+	      postcssOptions: {
+                plugins: [
+                  postcssCustomMedia()
+                ]
+              }
+	    }
+	  },
         ],
       },
     ],
