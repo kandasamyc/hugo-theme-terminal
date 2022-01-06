@@ -1,0 +1,13 @@
+{{ define "main" }}
+  {{ with .Content }}
+    <div class="index-content framed">
+      {{ . }}
+    </div>
+    {{ end }}
+    <div class="post">
+    {{ with .Site.GetPage "/wiki/20210728152915-index.md" }}
+    <h1 class="post-title">{{.Title}}</h1>
+    {{ .Content | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor">&#8983;</a> ${3}` | safeHTML }}
+    {{ end }}
+    </div>
+{{ end }}
