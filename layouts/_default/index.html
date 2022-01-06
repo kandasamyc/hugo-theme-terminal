@@ -15,7 +15,7 @@
           <h1 class="section-title">{{ .Name }}<a href="#{{ anchorize .Title }}" class="hanchor" arialabel="Anchor">⌗</a></h1>
           <div class="post-content">
             {{ if .Params.showMore }}
-              {{ partial "collection.html" (dict "context" $oldContext "contentType" "projects") }}
+              {{ partial "collection.html" (dict "context" $oldContext "contentType" (lower .Title) "postNum" 3) }}
             {{ else }}
               {{- with .Content -}}
                 {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor">&#8983;</a> ${3}` | safeHTML }}

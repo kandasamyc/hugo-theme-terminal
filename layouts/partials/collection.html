@@ -1,7 +1,5 @@
 <div class="posts">
-  {{ $paginator := .context.Paginate (where $.context.Site.RegularPages "Type" .contentType) }}
-
-  {{ range $paginator.Pages }}
+  {{ range ((.context.GetPage (printf "/%s/" .contentType)).Paginator (.postNum | default $.context.Site.Params.paginate)).Pages }}
   <div class="post on-list">
     {{ if (eq .File.Dir "posts") }}
       <span class="post-num">#{{ printf "%03d" (int .File.BaseFileName) }} </span>
@@ -51,6 +49,15 @@
       </div>
       {{ end }}
     </div>
-    {{ end }}
-    {{ partial "pagination.html" .context }}
+  {{ end }}
+  <div class="pagination">
+    <div class="pagination__buttons">
+      <span class="button previous">
+        <a href="{{ .URL }}">
+          <span class="button__text">Other {{ .contentType | pluralize }}</span>
+          <span class="button__icon">&puncsp;→</span>
+        </a>
+      </span>
+    </div>
+  </div>
 </div>
