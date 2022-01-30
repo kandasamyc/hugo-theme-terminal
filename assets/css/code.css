@@ -21,6 +21,7 @@
     ~ .code-toolbar {
       padding: 0;
       border-top: none;
+      border-bottom: none;
 
       .toolbar {
         display: none;
