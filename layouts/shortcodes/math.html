@@ -1,7 +1,9 @@
 <div class="framed" style="width:fit-content;margin:auto;padding-left:2.5rem;padding-right:2.5rem;">
   {{if .Get "title"}}
   <div>
-    <b>{{ .Get "title" | string }}</b>
+    <p style="text-align:center;padding:0;margin:0;">
+      <b>{{ .Get "title" | string }}</b>
+      </p>
   </div>
   <hr>
   {{end}}
