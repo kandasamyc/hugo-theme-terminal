@@ -7,11 +7,11 @@
   border-radius: 2px;
   padding: 20px;
 
-  >:first-child {
+  > :first-child {
     margin-top: 0;
   }
 
-  >:last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 }
@@ -49,7 +49,7 @@
     border-bottom: var(--border);
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 2px;
       display: block;
@@ -66,7 +66,7 @@
     display: block;
     margin-bottom: 20px;
     font-size: 1rem;
-    opacity: .5;
+    opacity: 0.5;
 
     a {
       text-decoration: none;
@@ -94,7 +94,7 @@
     list-style: none;
 
     li:not(:empty):before {
-      content: '-';
+      content: "-";
       position: absolute;
       left: -20px;
       color: var(--accent);
@@ -125,7 +125,10 @@
   visibility: hidden;
 }
 
-h1:hover a, h2:hover a, h3:hover a, h4:hover a {
+h1:hover a,
+h2:hover a,
+h3:hover a,
+h4:hover a {
   visibility: visible;
 }
 
@@ -136,4 +139,18 @@ h1:hover a, h2:hover a, h3:hover a, h4:hover a {
 .post-num {
   color: var(--accent);
   font-size: large;
+}
+
+table {
+  display: block;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  border: none;
+}
+
+mjx-container {
+  overflow-x: scroll;
 }
