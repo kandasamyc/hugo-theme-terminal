@@ -152,5 +152,5 @@ table {
 }
 
 mjx-container {
-  overflow-x: scroll;
+  overflow-x: auto;
 }
