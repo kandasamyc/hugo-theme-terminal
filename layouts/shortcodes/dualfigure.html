@@ -1,0 +1,18 @@
+<div style="display:flex; justify-content:space-around;">
+{{ if .Get "srcOne" }}
+  <figure style="display:inline-block;">
+    <img src="{{ .Get "srcOne" | safeURL }}" {{ with .Get "alt" }} alt="{{ . | plainify }}" {{ end }}/>
+    {{ if .Get "captionOne" }}
+      <figcaption class="center" >{{ .Get "captionOne" | safeHTML }}</figcaption>
+    {{ end }}
+  </figure>
+{{ end }}
+{{ if .Get "srcTwo" }}
+  <figure style="display:inline-block;">
+    <img src="{{ .Get "srcTwo" | safeURL }}" {{ with .Get "alt" }} alt="{{ . | plainify }}" {{ end }}/>
+    {{ if .Get "captionTwo" }}
+      <figcaption class="center" >{{ .Get "captionTwo" | safeHTML }}</figcaption>
+    {{ end }}
+  </figure>
+{{ end }}
+</div>
