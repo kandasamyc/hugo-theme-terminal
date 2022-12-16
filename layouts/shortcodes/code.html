@@ -22,7 +22,7 @@
       {{- if .Get "prompt" }} data-prompt="{{ .Get "prompt" }}"{{ end }}
       {{- if .Get "output" }} data-output="{{ .Get "output" }}"{{ end }}
       ><code {{ if .Get "lang" }}class="language-{{ .Get "lang" }}"{{ end }}
-      >{{ trim .Inner "\n" | string | replaceRE "\\\\#" "#" | replaceRE "\\\\_" "_" | replaceRE "_\\\\\\*" "/*" | replaceRE "\\\\\\*_" "*/"}}</code></pre>
+      >{{ trim (htmlUnescape .Inner | safeHTML) "\n" | string | replaceRE "\\\\#" "#" | replaceRE "\\\\_" "_" | replaceRE "_\\\\\\*" "/*" | replaceRE "\\\\\\*_" "*/" | replaceRE "`=" "==" | replaceRE "=`" "=="}}</code></pre>
   </div>
 {{ else }}
   {{ errorf "If you want to use the \"collapsable code\" shortcode, you need to pass a mandatory \"language\" param. The issue occured in %q (%q)" .Page.File .Page.Permalink }}
